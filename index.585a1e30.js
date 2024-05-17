@@ -1,11 +1,3 @@
-window.onload = ()=>{
-    toggleNavbar();
-    controlledTestimonialSlider();
-    controlledWhatWeDoSlider();
-    controlledOurTeamsSlider();
-    infiniteSlider();
-    responsingBgWithMouseMovement();
-};
 // Toggle Navbar
 const toggleNavbar = ()=>{
     const navToggler = document.querySelector("#nav-toggler");
@@ -30,6 +22,7 @@ const toggleNavbar = ()=>{
 };
 const controlledTestimonialSlider = ()=>{
     let sliderBox = document.querySelector("#testimonial-slider");
+    console.dir(sliderBox);
     let tapToRightBtn = document.querySelector("#testimonial_next");
     let tapToLeftBtn = document.querySelector("#testimonial_prev");
     let tapToRightBtn_small = document.querySelector("#testimonial_next_small");
@@ -168,7 +161,9 @@ const responsingBgWithMouseMovement = ()=>{
     const cursorFollowerFirst = document.querySelector(".cursorFollowerFirst");
     const cursorFollowerSecond = document.querySelector(".cursorFollowerSecond");
     const cursorFollowerThird = document.querySelector(".cursorFollowerThird");
+    console.log("hello");
     document.addEventListener("mousemove", (e)=>{
+        console.log("mouse");
         mouseX = e.screenX;
         mouseY = e.screenY;
     });
@@ -190,6 +185,17 @@ const responsingBgWithMouseMovement = ()=>{
         cursorFollowerThird.style.left = xpThird + "px";
         cursorFollowerThird.style.top = ypThird + "px";
     }, 20);
+};
+window.onload = ()=>{
+    setTimeout(()=>{
+        toggleNavbar();
+        controlledTestimonialSlider();
+        console.log("here");
+        controlledWhatWeDoSlider();
+        controlledOurTeamsSlider();
+        infiniteSlider();
+        responsingBgWithMouseMovement();
+    }, 10);
 };
 
 //# sourceMappingURL=index.585a1e30.js.map
